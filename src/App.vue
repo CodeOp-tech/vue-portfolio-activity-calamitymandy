@@ -1,10 +1,12 @@
 <template>
   <div>
-    <h1>Hello World</h1>
-    <button @click="isAdmin = true">ADMIN</button>
-    <button @click="isAdmin = false">USER</button>
-    <admin-view v-if="isAdmin" @createProject="addProject" />
-    <user-view v-else />
+    <div class="navbar">
+    <button @click="isAdmin = true" :class="{ 'active': isAdmin === true }">ADMIN</button>
+    <button @click="isAdmin = false" :class="{ 'active': isAdmin === false}">USER</button>
+  </div>
+  <h1 class="title">My Portfolio</h1>
+    <admin-view v-if="isAdmin" @createProject="addProject"/>
+    <user-view :allProjects="allProjects" v-else />
   </div>
 </template>
 
@@ -32,4 +34,56 @@ export default {
 };
 </script>
 
-<style></style>
+<style>
+body {
+  padding: 50px;
+  background-color: #bcefd0;
+  color: #fc6472;
+  text-align: center;
+  font-family:'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif
+}
+
+button {
+  margin: 10px;
+  border-radius: 20px;
+  border: 0;
+  padding: 10px;
+  color: #bcefd0;
+  background-color: #23c8b2;
+}
+
+input {
+  margin-top: 10px;
+  width: 100%;
+}
+
+textarea {
+  margin-top: 10px;
+  width: 100%;
+}
+
+.title {
+  padding: 50px;
+}
+
+.active {
+  color:#fc6472;
+  background-color: #eccdb3;
+}
+
+.navbar {
+  display: flex;
+  flex-direction: row-reverse;
+}
+
+.twoInputs {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 100px;
+  text-align: left;
+}
+
+.projectDescription {
+  text-align: left;
+}
+</style>
