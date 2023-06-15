@@ -43,8 +43,14 @@ export default {
         title: this.title,
         image: this.image,
         description: this.description,
-      });
+      })
+      this.reset();
     },
+    reset() {
+      this.title = "";
+      this.image = "";
+      this.description = "";
+    }
   },
 };
 </script>

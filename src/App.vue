@@ -23,7 +23,23 @@ export default {
   data() {
     return {
       isAdmin: true,
-      allProjects: []
+      allProjects: [
+        {
+        title: 'Project1',
+        image: 'https://picsum.photos/id/10/200',
+        description: 'blabla',
+      },
+      {
+        title: 'Project2',
+        image: 'https://picsum.photos/id/11/200',
+        description: 'blabla',
+      },
+      {
+        title: 'Project3',
+        image: 'https://picsum.photos/id/12/200',
+        description: 'blabla',
+      }
+      ]
     };
   },
   methods: {
