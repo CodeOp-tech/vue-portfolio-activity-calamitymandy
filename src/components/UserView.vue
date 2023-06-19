@@ -46,34 +46,27 @@ export default {
 <style>
 .grid {
   display: grid;
-  grid-template-columns: repeat(4, 1fr);
+  grid-template-columns: repeat(1, 1fr);
   gap: 16px;
 }
-@media only screen and (max-width: 860px) {
+@media only screen and (min-width: 860px) {
   .grid {
-    grid-template-columns: repeat(2, 1fr);
+    grid-template-columns: repeat(4, 1fr);
   }
   .detail {
+  display: flex;
+  margin: 60px 0 40px;
+  }
+  .detailText {
+  display: flex;
   flex-direction: column;
-  align-items: center;
-}
-.detailText {
-  align-items: center;
-}
+  padding: 0 50px 0 50px;
+  text-align: left;
+  }
 }
 .imgDetail {
   width: 300px;
   height: 300px;
   border-radius: 50%;
-}
-.detail {
-  display: flex;
-  margin: 60px 0 40px;
-}
-.detailText {
-  display: flex;
-  flex-direction: column;
-  padding: 0 50px 0 50px;
-  text-align: left;
 }
 </style>
